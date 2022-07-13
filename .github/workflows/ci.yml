@@ -43,5 +43,8 @@ jobs:
       - name: 🧱 Fetch submodules
         run: make submodules
 
+      - name: Coq Rules bootstrap
+        run: opam exec -- make dunestrap DUNEOPT=""
+
       - name: 🌌 Coq Universe
         run: opam exec -- make universe DUNEOPT=""
