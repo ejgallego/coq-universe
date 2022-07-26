@@ -35,6 +35,11 @@ After downloading the repository, fetch all the sources for the submodules using
 make submodules
 ```
 
+then, you need to bootstrap Coq's rules (only once per Coq checkout)
+```
+make dunestrap
+```
+
 afterwards build everything (only OCaml and Dune are required!) using
 ```
 make universe

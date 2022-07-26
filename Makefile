@@ -1,4 +1,4 @@
-.PHONY: help universe dune submodules clean install-opam-deps
+.PHONY: help universe dune submodules clean install-opam-deps dunestrap
 
 # This build works without dune being installed. In order for this to work, we
 # use the bootstrapping mechanism in the build of dune.
@@ -25,6 +25,10 @@ $(DUNE):
 
 # For interactive use
 DUNEOPT?=--display=short --error-reporting=twice
+
+dunestrap:
+	make -C coq-master dunestrap
+
 universe: $(DUNE)
 	$(DUNE) build @install $(DUNEOPT)
 
